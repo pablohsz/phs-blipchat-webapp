@@ -31,28 +31,19 @@
   const login = searchParams.get('login');
   const pass = searchParams.get('pass');
 
-  var customStyle = `#message-input {
-              box-sizing: border-box;
-              border: 1px solid #0CC8CC;
-              border-radius: 6px;
-              background: #252B39;
-            }
-            #message-input textarea {
-              background: #252B39;
-              font-size: 12px;
-              color: white;
-            }`
+
 
 
   (function () {
       window.onload = function () {
+
           new BlipChat()
               .withAppKey('cGhzcm91dGVyOjcyYWU3NTJlLTI3MjQtNGYwYi1iNTI4LWI1M2RlODcwNjZkMQ==')
               .withButton({"color":"#0096fa","icon":""})
               .withCustomCommonUrl('https://pablo-h-souza-wo0pf.chat.blip.ai/')
               .withTarget('body')
               .withCustomMessageMetadata ({"#userOrigin" : "browser"})
-              withAuth({
+              .withAuth({
               authType: BlipChat.DEV_AUTH,
               userIdentity: login,
               userPassword: pass,
